@@ -6,7 +6,6 @@ import * as fsExtra from 'fs-extra';
 import * as path from 'path';
 import { Config } from './config';
 import rimraf = require('rimraf');
-import ora from 'ora';
 export type RunnerFn = (config: Config) => Promise<any>;
 export type TaskDef = [string, RunnerFn];
 export type BaseFn = (command: string) => string;
@@ -113,7 +112,7 @@ export async function mapSources(file: string) {
   chain.write();
 }
 
-
+const ora = require('ora');
 async function runTask(name: string, taskFn: () => Promise<any>) {
   const spinner = ora(name);
 

@@ -9,7 +9,7 @@ export interface Config {
   scope: string;
 }
 
-export const modulesDir = './libs/';
+export const modulesDir = './packages/';
 export const packages: PackageDescription[] = fs
   .readdirSync(modulesDir)
   .filter((path) => {
