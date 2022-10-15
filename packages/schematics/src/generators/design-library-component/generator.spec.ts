@@ -6,7 +6,7 @@ import { DesignLibraryComponentGeneratorSchema } from './schema';
 
 describe('design-library-component generator', () => {
   let appTree: Tree;
-  const options: DesignLibraryComponentGeneratorSchema = { name: 'test' };
+  const options: DesignLibraryComponentGeneratorSchema = { name: 'test', projectName: 'test', path: '', prefix: 'foo', directory: '' };
 
   beforeEach(() => {
     appTree = createTreeWithEmptyWorkspace();

@@ -1,69 +1,62 @@
 import {
-  addProjectConfiguration,
   formatFiles,
   generateFiles,
-  getWorkspaceLayout,
-  names,
-  offsetFromRoot,
+  joinPathFragments,
+  readProjectConfiguration,
   Tree,
 } from '@nrwl/devkit';
-import * as path from 'path';
-import { DesignLibraryComponentGeneratorSchema } from './schema';
+import { names } from '@nrwl/workspace';
+import { normalize, sep } from 'path';
+import { SchematicInput, DesignLibraryComponentGeneratorSchema } from './schema';
 
-interface NormalizedSchema extends DesignLibraryComponentGeneratorSchema {
-  projectName: string;
-  projectRoot: string;
-  projectDirectory: string;
-  parsedTags: string[];
+/**
+ *
+ * @param root - ProjectConfiguration & NxJsonProjectConfiguration
+ * @param options
+ */
+function getPath(root: any, options: DesignLibraryComponentGeneratorSchema): string {
+  let path = '';
+  if (root.projectType === 'library') {
+    path = `${root.sourceRoot}${sep}lib`;
+  } else {
+    // Is application
+    path = `${root.sourceRoot}${sep}app`;
+  }
+
+  if (options.path && options.path.length > 0) {
+    return normalize(`${options.path}${sep}${options.directory}`);
+  } else {
+    return normalize(`${path}${sep}${options.directory}`);
+  }
 }
 
-function normalizeOptions(tree: Tree, options: DesignLibraryComponentGeneratorSchema): NormalizedSchema {
-  const name = names(options.name).fileName;
-  const projectDirectory = options.directory
-    ? `${names(options.directory).fileName}/${name}`
-    : name;
-  const projectName = projectDirectory.replace(new RegExp('/', 'g'), '-');
-  const projectRoot = `${getWorkspaceLayout(tree).libsDir}/${projectDirectory}`;
-  const parsedTags = options.tags
-    ? options.tags.split(',').map((s) => s.trim())
-    : [];
+export default async function (tree: Tree, schema: SchematicInput) {
+  const options = {
+    ...normalizeOptions(schema),
+    ...names(schema.name),
+    prefix: schema.prefix && schema.prefix.length ? `${schema.prefix}-` : ``,
+    tmpl: '',
+  };
 
-  return {
-    ...options,
-    projectName,
-    projectRoot,
-    projectDirectory,
-    parsedTags,
+  generateFiles(
+    tree, // the virtual file system
+    joinPathFragments(__dirname, './files'), // path to the file templates
+    getPath(readProjectConfiguration(tree, schema.projectName), options), // destination path of the files
+    options // config object to replace variable in file templates
+  );
+  await formatFiles(tree);
+  return () => {
+    console.log('done');
   };
 }
 
-function addFiles(tree: Tree, options: NormalizedSchema) {
-    const templateOptions = {
-      ...options,
-      ...names(options.name),
-      offsetFromRoot: offsetFromRoot(options.projectRoot),
-      template: ''
-    };
-    generateFiles(tree, path.join(__dirname, 'files'), options.projectRoot, templateOptions);
-}
-
-export default async function (tree: Tree, options: DesignLibraryComponentGeneratorSchema) {
-  const normalizedOptions = normalizeOptions(tree, options);
-  addProjectConfiguration(
-    tree,
-    normalizedOptions.projectName,
-    {
-      root: normalizedOptions.projectRoot,
-      projectType: 'library',
-      sourceRoot: `${normalizedOptions.projectRoot}/src`,
-      targets: {
-        build: {
-          executor: "@uiux/schematics:build",
-        },
-      },
-      tags: normalizedOptions.parsedTags,
-    }
-  );
-  addFiles(tree, normalizedOptions);
-  await formatFiles(tree);
+/**
+ * Extract the parent 'directory' for the specified
+ */
+function normalizeOptions(options: SchematicInput): DesignLibraryComponentGeneratorSchema {
+  return {
+    ...options,
+    // propertyName: toPropertyName(options.name),
+    directory: names(options.name).fileName,
+  };
 }

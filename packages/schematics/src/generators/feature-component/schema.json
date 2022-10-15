@@ -5,25 +5,30 @@
   "title": "",
   "type": "object",
   "properties": {
+    "path": {
+      "type": "string",
+      "format": "path",
+      "$default": {
+        "$source": "workingDirectory"
+      },
+      "description": "The path at which to create the NgRx Entity files, relative to the current workspace. Default is a folder with the same name as the entity in the project root.",
+      "visible": false
+    },
+    "projectName": {
+      "type": "string",
+      "description": "Project Name. See angular.json projects to find project name.",
+      "x-prompt": "See angular.json projects to find project name."
+    },
     "name": {
       "type": "string",
-      "description": "",
-      "$default": {
-        "$source": "argv",
-        "index": 0
-      },
-      "x-prompt": "What name would you like to use?"
+      "description": "Component name. What is the store name? Only give name in lowercase such as ( \"my-demo\" ).",
+      "x-prompt": "Component name? Only give name in lowercase such as ( \"my-demo\" )."
     },
-    "tags": {
+    "prefix": {
       "type": "string",
-      "description": "Add tags to the project (used for linting)",
-      "alias": "t"
-    }, 
-    "directory": {
-      "type": "string",
-      "description": "A directory where the project is placed",
-      "alias": "d"
+      "description": "The prefix to apply to the generated component selector.",
+      "x-prompt": "The prefix to apply to the generated component selector."
     }
   },
-  "required": ["name"]
+  "required": ["name", "projectName"]
 }

@@ -1,5 +1,10 @@
+
 export interface NgrxEffectStoreGeneratorSchema {
-    name: string;
-    tags?: string;
-    directory?: string;
+  projectName: string;
+  name: string;
+  path: string;
+}
+
+export interface SchematicOptions extends NgrxEffectStoreGeneratorSchema {
+  directory: string;
 }
