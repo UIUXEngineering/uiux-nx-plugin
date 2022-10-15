@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "name": "nx-ng-mat-prototype",
+  "version": "0.0.1",
+  "generators": {
+    "nx-ng-mat-prototype": {
+      "factory": "./src/generators/nx-ng-mat-prototype/generator",
+      "schema": "./src/generators/nx-ng-mat-prototype/schema.json",
+      "description": "nx-ng-mat-prototype generator"
+    }
+  }
+}

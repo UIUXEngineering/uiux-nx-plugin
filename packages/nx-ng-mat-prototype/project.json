@@ -1,0 +1,61 @@
+{
+  "name": "nx-ng-mat-prototype",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/nx-ng-mat-prototype/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/nx-ng-mat-prototype",
+        "main": "packages/nx-ng-mat-prototype/src/index.ts",
+        "tsConfig": "packages/nx-ng-mat-prototype/tsconfig.lib.json",
+        "assets": [
+          "packages/nx-ng-mat-prototype/*.md",
+          {
+            "input": "./packages/nx-ng-mat-prototype/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/nx-ng-mat-prototype/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/nx-ng-mat-prototype",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./packages/nx-ng-mat-prototype",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/nx-ng-mat-prototype/**/*.ts",
+          "packages/nx-ng-mat-prototype/generators.json",
+          "packages/nx-ng-mat-prototype/executors.json",
+          "packages/nx-ng-mat-prototype/package.json"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "packages/nx-ng-mat-prototype/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

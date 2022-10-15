@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@uiux/nx-ng-mat-prototype": [
+        "packages/nx-ng-mat-prototype/src/index.ts"
+      ],
       "@uiux/schematics": ["packages/schematics/src/index.ts"]
     }
   },
