@@ -3,10 +3,10 @@
   "name": "schematics",
   "version": "0.0.1",
   "generators": {
-    "schematics": {
-      "factory": "./src/generators/schematics/generator",
-      "schema": "./src/generators/schematics/schema.json",
-      "description": "schematics generator"
+    "design-library-component": {
+      "factory": "./src/generators/design-library-component/generator",
+      "schema": "./src/generators/design-library-component/schema.json",
+      "description": "Create a design library component."
     }
   }
 }

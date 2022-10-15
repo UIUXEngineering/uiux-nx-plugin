@@ -2,11 +2,11 @@ import { createTreeWithEmptyWorkspace } from '@nrwl/devkit/testing';
 import { Tree, readProjectConfiguration } from '@nrwl/devkit';
 
 import generator from './generator';
-import { SchematicsGeneratorSchema } from './schema';
+import { DesignLibraryComponentGeneratorSchema } from './schema';
 
-describe('schematics generator', () => {
+describe('design-library-component generator', () => {
   let appTree: Tree;
-  const options: SchematicsGeneratorSchema = { name: 'test' };
+  const options: DesignLibraryComponentGeneratorSchema = { name: 'test' };
 
   beforeEach(() => {
     appTree = createTreeWithEmptyWorkspace();
