@@ -7,6 +7,21 @@
       "factory": "./src/generators/design-library-component/generator",
       "schema": "./src/generators/design-library-component/schema.json",
       "description": "Create a design library component."
+    },
+    "feature-component": {
+      "factory": "./src/generators/feature-component/generator",
+      "schema": "./src/generators/feature-component/schema.json",
+      "description": "Create a feature component."
+    },
+    "ngrx-effect-store": {
+      "factory": "./src/generators/ngrx-effect-store/generator",
+      "schema": "./src/generators/ngrx-effect-store/schema.json",
+      "description": "Create an Ngrx entity store."
+    },
+    "ngrx-entity": {
+      "factory": "./src/generators/ngrx-entity/generator",
+      "schema": "./src/generators/ngrx-entity/schema.json",
+      "description": "Create an Ngrx store with Effect."
     }
   }
 }
