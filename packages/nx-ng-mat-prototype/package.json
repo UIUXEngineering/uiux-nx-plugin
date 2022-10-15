@@ -1,7 +1,15 @@
 {
-  "name": "@uiux/nx-ng-mat-prototype",
-  "version": "0.0.1",
-  "main": "src/index.js",
-  "generators": "./generators.json",
-  "executors": "./executors.json"
+  "name": "nx-ng-mat-prototype",
+  "version": "0.0.15",
+  "type": "commonjs",
+  "bin": {
+    "nx-ng-mat-prototype": "./bin/index.js"
+  },
+  "scripts": {
+    "generate": "bash ./bin/generate.sh"
+  },
+  "dependencies": {},
+  "publishConfig": {
+    "access": "public"
+  }
 }

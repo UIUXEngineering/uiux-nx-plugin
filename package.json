@@ -1,11 +1,17 @@
 {
-  "name": "uiux",
-  "version": "0.0.0",
+  "name": "uiux-nx-plugin",
+  "version": "0.0.15",
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
-    "build": "nx build",
-    "test": "nx test"
+    "build": "rm -rf dist/libs && npm run build:ng-prototype && npm run build:schematics",
+    "test": "nx test",
+    "ts-node:config": "ts-node --showConfig",
+    "update:versions": "ts-node ./build/update-version-numbers.ts",
+    "build:ng-prototype": "npx nx run nx-ng-mat-prototype:build && npx nx run nx-ng-mat-prototype:build-commands",
+    "build:schematics": "npx nx run schematics:build",
+    "publish:next": "ts-node ./build/publish-next.ts",
+    "publish:latest": "ts-node ./build/publish-latest.ts"
   },
   "private": true,
   "devDependencies": {
