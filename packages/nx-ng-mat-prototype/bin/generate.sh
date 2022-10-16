@@ -153,8 +153,6 @@ if echo $INIT_FIREBASE | grep '^[Yy]\?$'; then
   firebase login;
   firebase init;
 
-  cd apps/firebase
-
   # npm init -y does not exit correctly
 cat > package.json << EOF
   {
