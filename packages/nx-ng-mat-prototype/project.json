@@ -4,7 +4,7 @@
   "sourceRoot": "packages/nx-ng-mat-prototype/src",
   "projectType": "library",
   "targets": {
-    "build": {
+    "build  ": {
       "executor": "@nrwl/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
@@ -13,6 +13,7 @@
         "tsConfig": "packages/nx-ng-mat-prototype/tsconfig.lib.json",
         "assets": [
           "packages/nx-ng-mat-prototype/*.md",
+          "packages/nx-ng-mat-prototype/bin/*.sh",
           {
             "input": "./packages/nx-ng-mat-prototype/src",
             "glob": "**/!(*.ts)",
@@ -35,21 +36,6 @@
           }
         ]
       }
-    },
-    "build-commands": {
-      "executor": "nx:run-commands",
-      "outputs": ["{workspaceRoot}/dist/packages/nx-ng-mat-prototype"],
-      "options": {
-        "commands": [
-          {
-            "command": "cp ./packages/nx-ng-mat-prototype/bin/generate.sh dist/packages/nx-ng-mat-prototype/bin/generate.sh"
-          },
-          {
-            "command": "node ./scripts/chmod dist/packages/nx-ng-mat-prototype/bin/generate.sh"
-          }
-        ]
-      },
-      "parallel": false
     },
     "publish": {
       "executor": "nx:run-commands",

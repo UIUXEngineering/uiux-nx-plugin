@@ -59,7 +59,7 @@ git add .
 git commit -m "add angular material with custom theme configuration"
 
 # Install version of RxJS to support NgRX
-npm install rxjs@~7.5.0
+# npm install rxjs@~7.5.0
 
 npm install @ngrx/store@latest @ngrx/store-devtools@latest @ngrx/component@latest @ngrx/effects@latest @ngrx/schematics@latest
 
@@ -219,7 +219,7 @@ cat > .prettierrc <<EOF
 EOF
 
 
-npm run format:write
+npx nx format:write
 
 git add .
 git commit -m "Create $WORKSPACE_NAME with $APP_NAME app"

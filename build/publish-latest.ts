@@ -23,7 +23,7 @@ export async function publishLatestToNpm() {
 
     const cmd = [
       'npm publish',
-      `./dist/libs/${pkg}`,
+      `./dist/packages/${pkg}`,
       '--access=public',
       '--tag=latest',
       `--otp=${argDict.otp}`
