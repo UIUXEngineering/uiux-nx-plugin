@@ -9,6 +9,7 @@ schematicDeps.dependencies.tslib = packageJson.dependencies.tslib;
 schematicDeps.dependencies['@nrwl/devkit'] = packageJson.devDependencies['@nrwl/devkit'];
 schematicDeps.dependencies['@nrwl/workspace'] = packageJson.devDependencies['@nrwl/workspace'];
 schematicDeps.dependencies['@angular-devkit/schematics'] = packageJson.devDependencies['@angular-devkit/schematics'];
+schematicDeps.dependencies['@angular/material'] = packageJson.dependencies['@angular/material'];
 
 console.log(`Update schematic dependencies`);
 console.log( JSON.stringify(schematicDeps, null, 2))

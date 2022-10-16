@@ -22,6 +22,11 @@
       "factory": "./src/generators/ngrx-entity/generator",
       "schema": "./src/generators/ngrx-entity/schema.json",
       "description": "Create an Ngrx store with Effect."
+    },
+    "domain": {
+      "factory": "./src/generators/domain/generator",
+      "schema": "./src/generators/domain/schema.json",
+      "description": "Create app and libraries in a domain"
     }
   }
 }
