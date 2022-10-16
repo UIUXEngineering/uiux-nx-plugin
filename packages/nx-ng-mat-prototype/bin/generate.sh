@@ -116,17 +116,17 @@ EOF
 cd $WORKSPACE_PATH
 
 ## Create secretes library
-npx nx generate @nrwl/angular:library --name=secrets --directory=any-shared --compilationMode=partial --importPath=@secrets
-rm -rf /libs/any-shared/secrets/src/lib
-echo '/libs/any-shared/secrets/src/lib/' >> .gitignore
+npx nx generate @nrwl/angular:library --name=secrets --directory=shared --compilationMode=partial --importPath=@secrets
+rm -rf /libs/shared/secrets/src/lib
+echo '/libs/shared/secrets/src/lib/' >> .gitignore
 
 mkdir scripts;
 
 cat > scripts/secrets.sh << EOF
 #!/usr/bin/env bash
 
-rm -rf libs/any-shared/secrets/src/lib
-rsync -av --exclude '.git' --exclude '.gitignore' --exclude '.idea' --exclude 'scripts' --exclude 'package.json' ../\$1/* libs/any-shared/secrets/src/lib
+rm -rf libs/shared/secrets/src/lib
+rsync -av --exclude '.git' --exclude '.gitignore' --exclude '.idea' --exclude 'scripts' --exclude 'package.json' ../\$1/* libs/shared/secrets/src/lib
 EOF
 
 # In root directory, add npm script to get secrets to package.json
