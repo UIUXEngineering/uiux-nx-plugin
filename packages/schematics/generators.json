@@ -32,6 +32,11 @@
       "factory": "./src/generators/add-material-to-project/generator",
       "schema": "./src/generators/add-material-to-project/schema.json",
       "description": "Add Material to a project"
+    },
+    "add-app-to-domain": {
+      "factory": "./src/generators/add-app-to-domain/generator",
+      "schema": "./src/generators/add-app-to-domain/schema.json",
+      "description": "Add app and libraries to established domain."
     }
   }
 }
