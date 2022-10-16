@@ -81,7 +81,8 @@ npx nx generate @angular-architects/ddd:domain --name="$APP_NAME" --addApp=false
 npx nx generate @angular-architects/ddd:api --name="$APP_NAME" --domain="$APP_NAME"
 npx nx generate @angular-architects/ddd:ui --name="$APP_NAME" --domain="$APP_NAME"
 npx nx generate @angular-architects/ddd:util --name="$APP_NAME" --domain="$APP_NAME"
-
+npx nx generate @angular-architects/ddd:domain --name=shared --addApp=false
+npx nx generate @angular-architects/ddd:ui --name=design-library --shared --standalone
 
 # FIREBASE
 # FIREBASE
