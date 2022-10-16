@@ -4,7 +4,7 @@
   "sourceRoot": "packages/nx-ng-mat-prototype/src",
   "projectType": "library",
   "targets": {
-    "build  ": {
+    "build": {
       "executor": "@nrwl/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {

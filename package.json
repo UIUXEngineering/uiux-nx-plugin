@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
-    "build": "rm -rf dist/packages && npm run update:schematic:deps && npx nx run-many --target=build --all",
+    "build": "rm -rf dist && npx nx run-many --target=build --all",
     "test": "nx test",
     "ts-node:config": "ts-node --showConfig",
     "update:versions": "ts-node ./build/update-version-numbers.ts",

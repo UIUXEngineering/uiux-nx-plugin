@@ -11,6 +11,7 @@
         "outputPath": "dist/packages/schematics",
         "main": "packages/schematics/src/index.ts",
         "tsConfig": "packages/schematics/tsconfig.lib.json",
+        "buildableProjectDepsInPackageJsonType": "dependencies",
         "assets": [
           "packages/schematics/*.md",
           {
