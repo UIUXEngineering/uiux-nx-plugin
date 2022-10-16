@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "$id": "Material",
+  "title": "",
+  "type": "object",
+  "properties": {
+    "appName": {
+      "type": "string",
+      "description": "",
+      "x-prompt": "What name would you like to use?"
+    },
+    "domain": {
+      "type": "string",
+      "description": "What is te domain?",
+      "x-prompt": "What is te domain?"
+    }
+  },
+  "required": ["appName", "domain"]
+}

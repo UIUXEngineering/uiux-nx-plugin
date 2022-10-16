@@ -5,6 +5,7 @@ import { default as domain } from '@angular-architects/ddd/src/generators/domain
 import { default as ui } from '@angular-architects/ddd/src/generators/ui'
 import { default as util } from '@angular-architects/ddd/src/generators/util'
 import { default as api } from '@angular-architects/ddd/src/generators/api'
+// import { default as add-material-to-project } from '../add-material-to-project/generator'
 
 
 export default async function(tree: Tree, options: DomainGeneratorSchema) {
@@ -28,12 +29,6 @@ export default async function(tree: Tree, options: DomainGeneratorSchema) {
 
   // npx nx generate @angular-architects/ddd:domain --name=ford
 
-
-  const material = wrapAngularDevkitSchematic(
-    '@angular/material/schematics',
-    'ng-add'
-  );
-
   const chain: Promise<any>[] = [
     domain(tree, {
       name: options.domain,
@@ -54,12 +49,10 @@ export default async function(tree: Tree, options: DomainGeneratorSchema) {
       domain: options.domain,
       standalone: true
     }),
-    material(tree, {
-      project: `${options.domain}-${options.appName}`,
-      theme: 'custom',
-      typography: true,
-      animations: 'enabled'
-    })
+    // add-material-to-project(tree, {
+    //   appName: options.appName,
+    //   domain: options.domain
+    // })
   ]
 
   const solveChainPromises = async (promises) => {
