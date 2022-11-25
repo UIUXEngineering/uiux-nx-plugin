@@ -17,14 +17,14 @@
   },
   "private": true,
   "devDependencies": {
-    "@nrwl/cli": "15.0.0",
-    "@nrwl/devkit": "^15.0.0",
-    "@nrwl/eslint-plugin-nx": "15.0.0",
-    "@nrwl/jest": "15.0.0",
-    "@nrwl/js": "15.0.0",
-    "@nrwl/linter": "15.0.0",
-    "@nrwl/nx-plugin": "^15.0.0",
-    "@nrwl/workspace": "15.0.0",
+    "@nrwl/cli": "15.2.1",
+    "@nrwl/devkit": "15.2.1",
+    "@nrwl/eslint-plugin-nx": "15.2.1",
+    "@nrwl/jest": "15.2.1",
+    "@nrwl/js": "15.2.1",
+    "@nrwl/linter": "15.2.1",
+    "@nrwl/nx-plugin": "15.2.1",
+    "@nrwl/workspace": "15.2.1",
     "@swc-node/register": "^1.4.2",
     "@swc/cli": "~0.1.55",
     "@swc/core": "^1.2.173",
@@ -43,7 +43,7 @@
     "jest": "28.1.1",
     "jest-environment-jsdom": "28.1.1",
     "jsonc-eslint-parser": "^2.1.0",
-    "nx": "15.0.0",
+    "nx": "15.2.1",
     "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
     "shelljs": "^0.8.5",
@@ -54,9 +54,10 @@
   },
   "dependencies": {
     "@angular-architects/ddd": "^2.1.2",
-    "@angular-devkit/schematics": "^14.2.6",
-    "@nrwl/angular": "^15.0.0",
+    "@angular-devkit/schematics": "15.0.1",
+    "@nrwl/angular": "15.2.1",
     "@swc/helpers": "~0.4.11",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "@angular/core": "~15.0.0"
   }
 }
