@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@uiux/fn": ["packages/fn/src/index.ts"],
       "@uiux/nx-ng-mat-prototype": [
         "packages/nx-ng-mat-prototype/src/index.ts"
       ],

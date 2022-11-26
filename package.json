@@ -8,7 +8,7 @@
     "test": "nx test",
     "ts-node:config": "ts-node --showConfig",
     "update:versions": "ts-node ./build/update-version-numbers.ts",
-    "build:ng-prototype": "npx nx run nx-ng-mat-prototype:build && npx nx run nx-ng-mat-prototype:build",
+    "build:ng-prototype": "npx nx run nx-ng-mat-prototype:build",
     "build:schematics": "npx nx run schematics:build",
     "publish:next": "ts-node ./build/publish-next.ts",
     "publish:latest": "ts-node ./build/publish-latest.ts",
