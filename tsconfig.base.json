@@ -15,6 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@uiux/charts": ["packages/charts/src/index.ts"],
+      "@uiux/charts/bullet-chart": [
+        "packages/charts/bullet-chart/src/index.ts"
+      ],
+      "@uiux/charts/line-chart": ["packages/charts/line-chart/src/index.ts"],
       "@uiux/date": ["packages/date/src/index.ts"],
       "@uiux/fn": ["packages/fn/src/index.ts"],
       "@uiux/nx-ng-mat-prototype": [
