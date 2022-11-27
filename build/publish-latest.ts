@@ -14,6 +14,9 @@ if (!argDict.otp) {
  */
 export async function publishLatestToNpm() {
   const publishablePackages = [
+    'charts',
+    'date',
+    'fn',
     'nx-ng-mat-prototype',
     'schematics'
   ];
