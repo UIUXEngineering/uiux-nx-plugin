@@ -1,5 +1,5 @@
-@use './global-chart.styles' as global-chart;
-@use '../../../bullet-chart/src/lib/bullet-chart.component.theme' as bullet-chart;
+@use './src/lib/styles/global-chart.styles' as global-chart;
+@use './bullet-chart/src/lib/bullet-chart.component.theme' as bullet-chart;
 
 @mixin styles() {
   @include global-chart.styles();
