@@ -4,7 +4,7 @@
 @use './constants';
 
 @mixin styles() {
-  .p-uiux-chart-container {
+  .uiux-chart-container {
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -27,42 +27,42 @@
 
   // class set in component ts file
   // @HostBinding('class.login-component') bind = true;
-  .p-uiux-chart-container {
+  .uiux-chart-container {
   }
 
-  .p-chart-data-success-background {
+  .uiux-chart-data-success-background {
     background-color: mat.get-color-from-palette(mat.$green-palette, 500);
     fill: mat.get-color-from-palette(mat.$green-palette, 500);
   }
 
-  .p-chart-data-success-foreground {
+  .uiux-chart-data-success-foreground {
     color: mat.get-contrast-color-from-palette(mat.$green-palette, 500);
   }
 
-  .p-chart-data-warn-background {
+  .uiux-chart-data-warn-background {
     background-color: mat.get-color-from-palette($accent-palette, 500);
     fill: mat.get-color-from-palette($accent-palette, 500);
   }
 
-  .p-chart-data-warn-foreground {
+  .uiux-chart-data-warn-foreground {
     color: mat.get-contrast-color-from-palette($accent-palette, 500);
   }
 
-  .p-chart-data-error-background {
+  .uiux-chart-data-error-background {
     background-color: mat.get-color-from-palette($warn-palette, 500);
     fill: mat.get-color-from-palette($warn-palette, 500);
   }
 
-  .p-chart-data-error-foreground {
+  .uiux-chart-data-error-foreground {
     color: mat.get-contrast-color-from-palette($warn-palette, 500);
   }
 
-  .p-tooltip-container {
+  .uiux-tooltip-container {
     width: 100%;
     position: relative;
   }
 
-  .p-chart-tooltip {
+  .uiux-chart-tooltip {
     border: none;
     padding: 0;
     margin-bottom: 0;
@@ -71,91 +71,91 @@
     opacity: 0;
     border-radius: constants.$border-radius;
 
-    &.p-chart-data-success {
-      @extend .p-chart-data-success-foreground;
+    &.uiux-chart-data-success {
+      @extend .uiux-chart-data-success-foreground;
       border-color: mat.get-color-from-palette(mat.$green-palette, 500);
 
-      .p-tooltip-text {
+      .uiux-tooltip-text {
         color: mat.get-contrast-color-from-palette(mat.$green-palette, 500);
       }
     }
 
-    &.p-chart-data-warn {
-      @extend .p-chart-data-warn-foreground;
+    &.uiux-chart-data-warn {
+      @extend .uiux-chart-data-warn-foreground;
       border-color: mat.get-color-from-palette($accent-palette, 500);
 
-      .p-tooltip-text {
+      .uiux-tooltip-text {
         color: mat.get-contrast-color-from-palette($accent-palette, 500);
       }
     }
 
-    &.p-chart-data-error {
-      @extend .p-chart-data-error-foreground;
+    &.uiux-chart-data-error {
+      @extend .uiux-chart-data-error-foreground;
       border-color: mat.get-color-from-palette($warn-palette, 500);
-      .p-tooltip-text {
+      .uiux-tooltip-text {
         color: mat.get-contrast-color-from-palette($warn-palette, 500);
       }
     }
   }
 
-  .p-chart-tooltip-visible {
+  .uiux-chart-tooltip-visible {
     opacity: 1;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid $tooltip-border;
   }
 
-  .p-chart-tooltip-reversed {
-    .p-chart-tooltip {
+  .uiux-chart-tooltip-reversed {
+    .uiux-chart-tooltip {
       background-color: $tooltip-border;
       color: mat.get-contrast-color-from-palette($primary-palette, 500);
 
-      &.p-chart-data-success {
-        @extend .p-chart-data-success-background;
+      &.uiux-chart-data-success {
+        @extend .uiux-chart-data-success-background;
 
-        &.p-chart-tooltip-divot:before {
-          @extend .p-chart-data-success-background;
+        &.uiux-chart-tooltip-divot:before {
+          @extend .uiux-chart-data-success-background;
           border-color: mat.get-color-from-palette(mat.$green-palette, 500);
         }
 
-        .p-tooltip-text {
+        .uiux-tooltip-text {
           color: mat.get-contrast-color-from-palette(mat.$green-palette, 500);
         }
       }
 
-      &.p-chart-data-warn {
-        @extend .p-chart-data-warn-background;
+      &.uiux-chart-data-warn {
+        @extend .uiux-chart-data-warn-background;
 
-        &.p-chart-tooltip-divot:before {
-          @extend .p-chart-data-warn-background;
+        &.uiux-chart-tooltip-divot:before {
+          @extend .uiux-chart-data-warn-background;
           border-color: mat.get-color-from-palette($accent-palette, 500);
         }
 
-        .p-tooltip-text {
+        .uiux-tooltip-text {
           color: mat.get-contrast-color-from-palette($accent-palette, 500);
         }
       }
 
-      &.p-chart-data-error {
-        @extend .p-chart-data-error-background;
+      &.uiux-chart-data-error {
+        @extend .uiux-chart-data-error-background;
 
-        &.p-chart-tooltip-divot:before {
-          @extend .p-chart-data-error-background;
+        &.uiux-chart-tooltip-divot:before {
+          @extend .uiux-chart-data-error-background;
           border-color: mat.get-color-from-palette($warn-palette, 500);
         }
 
-        .p-tooltip-text {
+        .uiux-tooltip-text {
           color: mat.get-contrast-color-from-palette($warn-palette, 500);
         }
       }
     }
 
-    .p-chart-tooltip-divot:before {
+    .uiux-chart-tooltip-divot:before {
       background: $tooltip-border;
     }
   }
 
-  .p-chart-tooltip-divot:before {
+  .uiux-chart-tooltip-divot:before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -172,10 +172,10 @@
   }
 
   @if ($is-dark-theme) {
-    .p-chart-tooltip {
+    .uiux-chart-tooltip {
       background-color: var.$background-color;
     }
-    .p-chart-tooltip-divot:before {
+    .uiux-chart-tooltip-divot:before {
       background-color: var.$background-color;
     }
   }
