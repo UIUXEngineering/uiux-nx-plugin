@@ -38,8 +38,10 @@ done
 
 echo "# workspace name: $WORKSPACE_NAME"
 echo "# App Name: $APP_NAME"
+echo "For angular workspace configuration, choose \"Integrated\"";
 
-npx create-nx-workspace@latest --preset=angular-nest --name="$WORKSPACE_NAME" --appName="$APP_NAME" --style=scss --nxCloud=false
+# npx create-nx-workspace@latest --preset=angular-nest --name="ng-patterns" --appName="patterns" --style=scss --nxCloud=false
+npx create-nx-workspace@latest
 
 echo "cd $WORKSPACE_NAME"
 cd "$WORKSPACE_NAME";
