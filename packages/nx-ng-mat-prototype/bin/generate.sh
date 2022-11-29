@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-NGRX_VERSION="14.0.0"
+NX_VERSION="14.8.5"
+NGRX_VERSION="14.3.2"
+MATERIAL_VERSION="14.2.7"
 
 CWD=$(pwd);
 
@@ -38,10 +40,14 @@ done
 
 echo "# workspace name: $WORKSPACE_NAME"
 echo "# App Name: $APP_NAME"
-echo "For angular workspace configuration, choose \"Integrated\"";
+# echo "For angular workspace configuration, choose \"Integrated\"";
 
-# npx create-nx-workspace@latest --preset=angular-nest --name="ng-patterns" --appName="patterns" --style=scss --nxCloud=false
-npx create-nx-workspace@latest
+echo "Installing yarn globally"
+npm install -g yarn
+
+npx create-nx-workspace@"$NX_VERSION" --preset=angular --name="$WORKSPACE_NAME" --appName="$APP_NAME" --style=scss --nxCloud=false --packageManager=yarn
+# npx create-nx-workspace@latest --preset=angular --name="ng-patterns" --appName="patterns" --style=scss --nxCloud=false --packageManager=yarn
+# npx create-nx-workspace@latest
 
 echo "cd $WORKSPACE_NAME"
 cd "$WORKSPACE_NAME";
@@ -52,8 +58,8 @@ node -v > .nvmrc;
 
 
 # Add Material
-npm install @angular/material;
-npm install @angular/cdk;
+npm install @angular/material@"$MATERIAL_VERSION"
+npm install @angular/cdk@"$MATERIAL_VERSION"
 npx nx g @angular/material:ng-add --project="$APP_NAME" --theme=custom --typography=true --animations=enabled
 # npx nx g @angular/material:ng-add --project=todo --theme=custom --typography=true --animations=enabled
 
@@ -63,12 +69,12 @@ git commit -m "add angular material with custom theme configuration"
 # Install version of RxJS to support NgRX
 # npm install rxjs@~7.5.0
 
-npm install @ngrx/store@latest @ngrx/store-devtools@latest @ngrx/component@latest @ngrx/effects@latest @ngrx/schematics@latest
+npm install @ngrx/store@"$NGRX_VERSION" @ngrx/store-devtools@"$NGRX_VERSION" @ngrx/component@"$NGRX_VERSION" @ngrx/effects@"$NGRX_VERSION" @ngrx/schematics@"$NGRX_VERSION"
 
-npx nx g @ngrx/store:ng-add --project="$APP_NAME" --module=app.module.ts
-npx nx g @ngrx/store-devtools:ng-add --project="$APP_NAME" --module=app.module.ts
-npx nx g @ngrx/component:ng-add --project="$APP_NAME" --module=app.module.ts
-npx nx g @ngrx/effects:ng-add --project="$APP_NAME" --module=app.module.ts
+npx nx g @ngrx/store:ng-add --project="$APP_NAME" --module=app.module.ts --force
+npx nx g @ngrx/store-devtools:ng-add --project="$APP_NAME" --module=app.module.ts --force
+npx nx g @ngrx/component:ng-add --project="$APP_NAME" --module=app.module.ts --force
+npx nx g @ngrx/effects:ng-add --project="$APP_NAME" --module=app.module.ts --force
 
 npm install @uiux/schematics@latest
 npm install @nrwl/nx-plugin@latest
